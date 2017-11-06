@@ -35,6 +35,7 @@ from menu_conf_dlg import menu_conf_dlg
 # Initialize Qt resources from file resources.py
 import resources
 
+import traceback
 
 def getFirstChildByTagNameValue(elt, tagName, key, value):
     nodes = elt.elementsByTagName(tagName)
@@ -448,11 +449,11 @@ class menu_from_project:
                             self.iface.legendInterface().refreshLayerSymbology(theLayer)
                             self.iface.legendInterface().moveLayer(theLayer, idxGroup)
                             self.iface.legendInterface().refreshLayerSymbology(theLayer)
-                    
-                            
+
         except:
+            tb = traceback.format_exc()
             QgsMessageLog.logMessage('Menu from layer : invalid ' + filename, 'Extensions')
-            pass
+            QgsMessageLog.logMessage(str(tb), 'Extensions')
         
         self.canvas.freeze(False)    
         self.canvas.setRenderFlag(True)
@@ -482,7 +483,6 @@ class menu_from_project:
             del self.hdialog
         except:
             QgsMessageLog.logMessage(sys.exc_info()[0], 'Extensions')
-            pass
         
     def doLink( self, url ):
         if url.host() == "" :
