@@ -11,17 +11,20 @@
 [general]
 name=Layers menu from project
 qgisMinimumVersion=2.8
+qgisMaximumVersion=2.98
 description=Build layers shortcuts menus based on QGis projects
 about=Allow easy opening of layers maintaining their style.
 
-version=0.7.6
+version=0.7.7
 
 # end of mandatory metadata
 
 # Optional items:
 
 # Uncomment the following line and add your changelog entries:
-changelog= 0.7.6 : Better documentation
+changelog= 0.7.7 : When create group option is checked, the original layer visibility is preserved.
+      thanks to Eric LAZZARETTI
+    0.7.6 : Better documentation
 	0.7.5 : Tooltip refinement
     0.7.4 : Some python cleaning
     0.7.3 : New layer id without special characters

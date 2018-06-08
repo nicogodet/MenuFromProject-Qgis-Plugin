@@ -181,6 +181,7 @@ class menu_from_project:
             try:
                 legendlayerfileElt = element.firstChild().firstChildElement("legendlayerfile")
                 layerId = legendlayerfileElt.attribute("layerid")
+                visible = legendlayerfileElt.attribute("visible")
                 action = QAction(element.attribute("name"), self.iface.mainWindow())
                 
                 if (self.optionTooltip == (True)): 
@@ -236,8 +237,8 @@ class menu_from_project:
                 
                 menu.addAction(action)
                 yaLayer = True
-                helper = lambda _filename,_who,_menu: (lambda: self.do_aeag_menu(_filename, _who, _menu))
-                action.triggered.connect(helper(filename, layerId, menu))
+                helper = lambda _filename, _who, _menu, _visible: (lambda: self.do_aeag_menu(_filename, _who, _menu, _visible))
+                action.triggered.connect(helper(filename, layerId, menu, visible))
             except:
                 pass
             
@@ -380,7 +381,7 @@ class menu_from_project:
             self.initMenus()
 
     # run method that performs all the real work
-    def do_aeag_menu(self, filename, who, menu=None):
+    def do_aeag_menu(self, filename, who, menu=None, visible="1"):
         self.canvas.freeze(True)
         self.canvas.setRenderFlag(False)
         idxGroup = None
@@ -449,6 +450,9 @@ class menu_from_project:
                             self.iface.legendInterface().refreshLayerSymbology(theLayer)
                             self.iface.legendInterface().moveLayer(theLayer, idxGroup)
                             self.iface.legendInterface().refreshLayerSymbology(theLayer)
+                            
+                            if visible == "0":
+                                self.iface.legendInterface().setLayerVisible(theLayer, False)
 
         except:
             tb = traceback.format_exc()
