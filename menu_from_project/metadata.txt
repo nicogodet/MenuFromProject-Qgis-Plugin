@@ -25,7 +25,7 @@ version=0.7.7
 changelog= 0.7.7 : When create group option is checked, the original layer visibility is preserved.
       thanks to Eric LAZZARETTI
     0.7.6 : Better documentation
-	0.7.5 : Tooltip refinement
+    0.7.5 : Tooltip refinement
     0.7.4 : Some python cleaning
     0.7.3 : New layer id without special characters
     0.7.2 : Some optimizations
@@ -33,7 +33,7 @@ changelog= 0.7.7 : When create group option is checked, the original layer visib
     0.7 : Works with "relative path" projects, and embedded layers
     0.6 : QGis 2.2 compatible 
     0.5 : QGis 2.0 compatible 
-	0.4.1 : Load all layers item, create group option (dev version 1.9)
+    0.4.1 : Load all layers item, create group option (dev version 1.9)
 
 # tags are comma separated with spaces allowed
 tags=menu layer project
