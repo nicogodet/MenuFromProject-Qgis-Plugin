@@ -219,7 +219,7 @@ def read_from_http(uri: str, download_folder: Path):
     project_download.downloadExited.connect(loop.quit)
     project_download.downloadError.connect(downloadError)
     project_download.startDownload()
-    loop.exec_()
+    loop.exec()
 
     return read_from_file(str(cached_filepath)), str(cached_filepath)
 
