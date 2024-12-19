@@ -161,13 +161,13 @@ class MenuConfDialog(QDialog, FORM_CLASS):
         self.cbxLoadAll.setChecked(settings.optionLoadAll)
         self.cbxLoadAll.setTristate(False)
 
-        self.cbxCreateGroup.setCheckState(settings.optionCreateGroup)
+        self.cbxCreateGroup.setChecked(settings.optionCreateGroup)
         self.cbxCreateGroup.setTristate(False)
 
-        self.cbxShowTooltip.setCheckState(settings.optionTooltip)
+        self.cbxShowTooltip.setChecked(settings.optionTooltip)
         self.cbxShowTooltip.setTristate(False)
 
-        self.cbxOpenLinks.setCheckState(settings.optionOpenLinks)
+        self.cbxOpenLinks.setChecked(settings.optionOpenLinks)
         self.cbxOpenLinks.setTristate(False)
 
         self.sourcesMdText = {
